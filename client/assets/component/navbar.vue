@@ -7,7 +7,7 @@
                 />
             </div>
             
-            <a class="item" @click="$parent.page = 'article form'" v-if="isLogin">Write</a>
+            <a class="item" @click="$parent.page = 'article form'" v-if="isLogin">Create</a>
             <div class="right menu">
                 <div class="item">
                     <div class="ui icon input">

@@ -73,7 +73,6 @@ import card from './card'
 import articleDetail from './articleDetail'
 import axios from '../axios'
 
-const baseUrl = 'http://localhost/3000'
 export default {
     components:{
         navbar,
@@ -132,7 +131,7 @@ export default {
 
             axios({
                 method: 'get',
-                url: baseUrl + '/articles' + query
+                url: '/articles' + query
             })
                 .then(({ data }) => {
                     this.articles = data
@@ -182,7 +181,7 @@ export default {
                 .then((willDelete) => {
                     if (willDelete) {
                         axios({
-                            url: baseUrl + `/articles/${id}`,
+                            url: `/articles/${id}`,
                             method: 'delete',
                             headers: {
                                 accesstoken: localStorage.getItem('accesstoken')

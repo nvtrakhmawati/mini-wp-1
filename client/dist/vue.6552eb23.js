@@ -8969,7 +8969,7 @@ exports.default = _default;
                 }
               }
             },
-            [_vm._v("Write")]
+            [_vm._v("Create")]
           )
         : _vm._e(),
       _vm._v(" "),
@@ -12472,7 +12472,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
-var baseUrl = 'http://localhost/3000';
 var _default = {
   components: {
     navbar: _navbar.default,
@@ -12532,7 +12531,7 @@ var _default = {
 
       (0, _axios.default)({
         method: 'get',
-        url: baseUrl + '/articles' + query
+        url: '/articles' + query
       }).then(function (_ref2) {
         var data = _ref2.data;
         _this2.articles = data;
@@ -12582,7 +12581,7 @@ var _default = {
       }).then(function (willDelete) {
         if (willDelete) {
           (0, _axios.default)({
-            url: baseUrl + "/articles/".concat(id),
+            url: "/articles/".concat(id),
             method: 'delete',
             headers: {
               accesstoken: localStorage.getItem('accesstoken')
@@ -15799,7 +15798,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35625" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36615" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
