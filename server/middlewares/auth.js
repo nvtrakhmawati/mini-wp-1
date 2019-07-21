@@ -1,7 +1,6 @@
 const User = require('../models/user');
-const Post = require('../models/post');
-const Helper = require('../helpers/helper')
-
+const Post = require('../models/article');
+const Helper = require('../helpers/helper');
 
 module.exports = {
     authentication: function (req, res, next) {
@@ -14,41 +13,64 @@ module.exports = {
                 if (process.env.NODE_ENV === 'test') {
                     next();
                 } else {
-                    User.findById(req.authenticatedUser._id)
+                    User
+                        .findById(req.authenticatedUser._id)
                         .then(user => {
                             if (user) {
+                                
                                 next();
                             } else {
-                                res.status(401).json({message: 'Token is not valid'})
+                                res
+                                    .status(401)
+                                    .json({
+                                        message: 'Token is not valid'
+                                    })
                             }
                         })
                         .catch(err => {
-                            res.status(500).json({message: err.message})
+                            next(err);
                         })
                 }
             } else {
-                res.status(401).json({message: 'Please login to continue'})
+                res
+                    .status(401)
+                    .json({
+                        message: 'Please login to continue'
+                    })
             }
         } catch (err) {
-            res.status(401).json({message: 'Please login to continue'})
+            res
+                .status(401)
+                .json({
+                    message: 'Please login to continue'
+                })
         }
     },
 
     authorization: function (req, res, next) {
-        Post.findById(req.params.id)
-            .then(todo => {
-                if (todo) {
-                    if (String(post.user) !== req.authenticatedUser._id) {
-                        res.status(403).json({message: 'Forbidden'})
+        Article
+            .findById(req.params.id)
+            .then(article => {
+                if (article) {
+                    if (String(article.owner) !== req.authenticatedUser._id) {
+                        res
+                            .status(403)
+                            .json({
+                                message: 'Forbidden'
+                            })
                     } else {
                         next()
                     }
                 } else {
-                    res.status(404).json({message: 'Post not found'})
+                    res
+                        .status(404)
+                        .json({
+                            message: 'Article not found'
+                        })
                 }
             })
             .catch(err => {
-                res.status(500).json({message: 'Internal Server Error'})
+                next(err);
             })
-    },
+    }
 }
