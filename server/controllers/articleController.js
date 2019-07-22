@@ -68,7 +68,7 @@ class ArticleController {
         if (req.file) {
             featured_image = req.file.cloudStoragePublicUrl;
         } else {
-            featured_image = 'https://www.seaharvest.net.au/wp-content/themes/seaharvest/img/assets/built/compass-blue.png';
+            featured_image = 'client/assets/src/macintosh-operating-systems-microsoft-word-computer-icons-microsoft-office-for-mac-2011-word-2013-icon-png.jpg';
         }
 
         const obj = {
