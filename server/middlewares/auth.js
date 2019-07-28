@@ -1,5 +1,5 @@
 const User = require('../models/user');
-const Post = require('../models/article');
+const Article = require('../models/article');
 const Helper = require('../helpers/helper');
 
 module.exports = {

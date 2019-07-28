@@ -63,8 +63,7 @@
 <script>
 import googleButton from './g-signin-button'
 import axios from '../axios'
-
-
+import swal from 'sweetalert'
 
 export default {
     name:'login-form',
