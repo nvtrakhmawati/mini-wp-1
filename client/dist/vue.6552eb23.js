@@ -10899,7 +10899,7 @@ var _axios = _interopRequireDefault(require("axios"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _default = _axios.default.create({
-  baseURL: 'http://localhost:3000'
+  baseURL: 'http://35.240.135.206'
 });
 
 exports.default = _default;
@@ -12235,6 +12235,10 @@ var _default = {
   props: {
     article: Object,
     userEmail: String
+  },
+  created: function created() {
+    console.log(this.article);
+    console.log(this.userEmail);
   }
 };
 exports.default = _default;
@@ -12708,7 +12712,7 @@ exports.default = _default;
         [
           _vm.page === "article"
             ? _c("article-detail", {
-                attrs: { article: _vm.article, "user-email": _vm.userEmail },
+                attrs: { article: _vm.article, userEmail: _vm.userEmail },
                 on: {
                   "edit-article": _vm.editArticle,
                   "delete-article": _vm.deleteArticle
@@ -15804,7 +15808,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "41423" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36555" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

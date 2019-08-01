@@ -55,7 +55,11 @@ export default {
     name:'article-detail',
     props: {
         article: Object,
-        userEmail: String
+        userEmail: String,
+    },
+    created(){
+        console.log(this.article)
+        console.log(this.userEmail)
     }
 }
 </script>

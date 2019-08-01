@@ -46,7 +46,7 @@
             <article-detail
                 v-if="page === 'article'"
                 :article="article"
-                :user-email="userEmail"
+                :userEmail="userEmail"
                 @edit-article="editArticle"
                 @delete-article="deleteArticle"
             ></article-detail>
